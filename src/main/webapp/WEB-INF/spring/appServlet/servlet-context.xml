@@ -24,5 +24,11 @@
 	<context:component-scan base-package="com.gnu.app" />
 	
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/**" />
+			<beans:bean class="com.gnu.common.interceptor.LoginInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
