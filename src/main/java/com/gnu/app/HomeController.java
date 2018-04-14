@@ -36,4 +36,19 @@ public class HomeController {
 		return "home";
 	}
 	
+	
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public String login() {
+		return "home";
+	}
+	
+	
+	@RequestMapping(value = "/test.do", method = RequestMethod.GET)
+	public String test() {
+		return "member/loginForm";
+	}
+	
+	
+	
+	
 }

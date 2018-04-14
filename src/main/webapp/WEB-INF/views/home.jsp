@@ -2,7 +2,9 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Homesdf</title>
+<link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <h1>

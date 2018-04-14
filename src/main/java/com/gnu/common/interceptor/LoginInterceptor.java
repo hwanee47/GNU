@@ -25,7 +25,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		Member member = (Member) session.getAttribute("member");
 		
 		if(member == null) {
-			System.out.println("Member 세션없음.");
+			System.out.println(request.getContextPath()+"/member/loginForm.jsp");
+			response.sendRedirect(request.getContextPath()+"/login.do");
 			return false;
 		}
 		
