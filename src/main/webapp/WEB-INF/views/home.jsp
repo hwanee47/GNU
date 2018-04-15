@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Homesdf</title>
-<link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/resources/css/common.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
