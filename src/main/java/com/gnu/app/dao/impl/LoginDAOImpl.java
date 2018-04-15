@@ -16,7 +16,7 @@ import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
  * @
  * @  수정일         수정자                   수정내용
  * @ -------    --------    ---------------------------
- * @ 2018.01.27    김진환          최초 생성
+ * @ 2018.04.15    hwanee          최초 생성
  *
  *  
  */
