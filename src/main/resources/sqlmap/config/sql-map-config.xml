@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
 
-<configuration>
+<sqlMapConfig>
+	<!-- 네임스페이스 사용 -->
+	<settings useStatementNamespaces="true"/> 
 	
-	<settings>
-		<setting name="cacheEnabled" value="true"/>
-		<setting name="lazyLoadingEnabled" value="true"/>
-		<setting name="multipleResultSetsEnabled" value="true"/>
-	</settings>
- 
-	<mappers>
-        
-   </mappers>
-</configuration>
+	<!-- Resource -->
+	<sqlMap resource="sqlmap/sql/Employee.xml"/>
+
+</sqlMapConfig>

@@ -16,7 +16,7 @@ GNU Spring Project.
 #### **실행환경**
 ```
 - Spring 4.1.2
-- 
+- MyBatis
 - 
 - 
 - 
