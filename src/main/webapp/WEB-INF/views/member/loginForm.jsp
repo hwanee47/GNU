@@ -6,14 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=300,  initial-scale=1, minimum-scale=1">
 <title>Insert title here</title>
-<link href="${pageContext.request.contextPath}/resources/css/common.css"
-	rel="stylesheet">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
+<link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -51,15 +47,15 @@
 						<h2 class="form-signin-heading">REGISTER <span class="glyphicon glyphicon-pencil"></span></h2>
 						<div class="form-group">
 							<label for="name">Your Name:</label> 
-							<input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+							<input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required="">
 						</div>
 						<div class="form-group">
 							<label for="newemail">Id:</label> 
-							<input type="text" class="form-control" id="newemail" placeholder="Enter new id" name="newemail">
+							<input type="text" class="form-control" id="newemail" placeholder="Enter new id" name="newemail" required="">
 						</div>
 						<div class="form-group">
 							<label for="newpwd">Password:</label> 
-							<input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+							<input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd" required="">
 						</div>
 						<button class="btn btn-lg btn-info btn-block" type="submit">REGISTER</button>
 					</form>
