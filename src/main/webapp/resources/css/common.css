@@ -22,7 +22,7 @@ body {
 }
 
 .form-signin, .form-register {
-  max-width: 700px;
+  max-width: 1500px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
@@ -62,7 +62,7 @@ body {
 	}
 }
 
-#ip-id, #ip-pwd {
+.form-signin  input[type="text"], .form-signin input[type="password"] {
   height: 70px;
   margin-top:10px;
 }
@@ -73,4 +73,4 @@ body {
 
 .form-register  input[type="text"],input[type="password"]{
 	height: 50px;
-
+}

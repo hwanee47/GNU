@@ -17,11 +17,19 @@ import java.util.List;
 
 public interface LoginDAO {
 	/**
-	 * f을 조회한다.
-	 * @param InWarVo - 화면에서 입력한 입고정보
-	 * @return List - 입고실적 LIST
+	 * 로그인처리
+	 * @param map - 화면에서 입력한 로그인정보
+	 * @return booelan  
 	 * @exception Exception
 	 */
-	public List<HashMap<String, String>> test() throws Exception;
+	public boolean login(HashMap<String, String> map) throws Exception;
+	
+	/**
+	 * 사용자 등록처리
+	 * @param map - 화면에서 입력한 사용자정보
+	 * @return   
+	 * @exception Exception
+	 */
+	public void register(HashMap<String, String> map) throws Exception;
 	
 }

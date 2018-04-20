@@ -28,9 +28,13 @@ public class LoginServiceImpl  implements LoginService{
 	private LoginDAO loginDAO;
 	
 	@Override
-	public List<HashMap<String, String>> test() throws Exception {
-		loginDAO.test();
-		return null;
+	public boolean login(HashMap<String, String> map) throws Exception {
+		return 	loginDAO.login(map);
+	}
+
+	@Override
+	public void register(HashMap<String, String> map) throws Exception {
+		loginDAO.register(map);
 	}
 	
 	

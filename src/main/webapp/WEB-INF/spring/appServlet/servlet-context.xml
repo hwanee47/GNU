@@ -28,7 +28,7 @@
 	<interceptors>
 		<interceptor>
 			<mapping path="/**" />
-			<exclude-mapping path="/login.do"/>
+			<exclude-mapping path="/home/*.do"/>
 			<beans:bean class="com.gnu.common.interceptor.LoginInterceptor" />
 		</interceptor>
 	</interceptors>

@@ -26,7 +26,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		if(member == null) {
 			System.out.println(request.getContextPath()+"/member/loginForm.jsp");
-			response.sendRedirect(request.getContextPath()+"/login.do");
+			response.sendRedirect(request.getContextPath()+"/home/login.do");
 			return false;
 		}
 		

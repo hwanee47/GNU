@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Member">
+
+
+    <select id="loginCheck" parameterClass="Map" resultClass="Integer">
+    	/*Member.loginCheck*/
+         SELECT 
+         	COUNT(*) 
+         FROM 
+         	MEMBER
+         WHERE
+         	ID = '$ID$'
+         AND PASSWORD = '$PWD$'
+    </select>
+    
+    
+    <insert id="insertMember" parameterClass="Map">
+    	/*Member.insertMember*/
+    	INSERT INTO MEMBER
+    	(
+    		ID
+    		,PASSWORD
+    		,NAME
+    	)
+    	VALUES
+    	(
+    		'$ID$'
+    		,'$PWD$'
+    		,'$NAME$'
+    	)
+    	
+    
+    </insert>
+</sqlMap>

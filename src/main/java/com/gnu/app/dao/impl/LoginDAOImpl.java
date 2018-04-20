@@ -25,10 +25,19 @@ import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 
 	@Override
-	public List<HashMap<String, String>> test() throws Exception {
-		List<HashMap<String, String>> test = (List<HashMap<String, String>>) list("Employee.test",null);
-		System.out.println(test.size());
-		return null;
+	public boolean login(HashMap<String, String> map) throws Exception {
+		int cnt = (Integer)select("Member.loginCheck", map);
+		
+		//로그인정보가 없는경우 false
+		if(cnt==0) return false; 
+		
+		return true;
+	}
+
+	
+	@Override
+	public void register(HashMap<String, String> map) throws Exception {
+		insert("Member.insertMember", map);
 	}
 	
 	
