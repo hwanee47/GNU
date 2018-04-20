@@ -17,7 +17,7 @@ GNU Spring Project.
 ```
 - Spring 4.1.2
 - MyBatis
-- 
+-
 - 
 - 
 ```
