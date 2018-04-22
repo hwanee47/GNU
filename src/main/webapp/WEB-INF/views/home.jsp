@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Homesdf</title>
+	<title>GNU 스마트휴지걸이(6조)</title>
 <link href="<%=request.getContextPath()%>/resources/css/common.css" rel="stylesheet" type="text/css">
 
 </head>

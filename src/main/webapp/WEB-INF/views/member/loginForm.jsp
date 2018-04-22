@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <meta name="viewport" content="width=device-width,  initial-scale=1, minimum-scale=1">
-<title>Insert title here</title>
+<title>GNU 스마트휴지걸이(6조)</title>
 <link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
