@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	GNU 스마트휴지걸이(6조)  
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
