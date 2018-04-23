@@ -94,7 +94,7 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/register.do", method = RequestMethod.POST)
-	public void register(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
+	public String register(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
 		
 		System.out.println(member.getName());
 		System.out.println(member.getId());
@@ -107,6 +107,7 @@ public class HomeController {
 		
 		loginService.register(map);
 		
+		return "member/loginForm";
 	}
 	
 	

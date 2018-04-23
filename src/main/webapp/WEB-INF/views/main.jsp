@@ -28,46 +28,19 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                Foobar<b>Company</b>
+                <b>GNU 스마트휴지걸이</b>
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <!-- Dashboard -->
-                <li class="active open">
-                  <a href="#">
-                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_timer</span> Dashboard
-                  </a>
-                </li>
-                <!-- Banner -->
-                <li class="">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">burst_mode</span>
-                        Banners <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu forAnimate" role="menu">
-                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
-                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
-                    </ul>
-                </li>
+                
                 <li class="separator">Content</li>
                 <!-- Page -->
                 <li class="">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">description</span>
                         Pages <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu forAnimate" role="menu">
-                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
-                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
-                    </ul>
-                </li>
-                <!-- Blog -->
-                <li class="">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">chat_bubble_outline</span>
-                        Blog <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu forAnimate" role="menu">
                         <li><a href="#"><i class="material-icons">add</i> Add</a></li>
@@ -86,6 +59,7 @@
                     </ul>
                 </li>
                 <li class="separator">System</li>
+                <c:if test="${member.auth eq 'ADMIN'}">
                 <!-- Users -->
                 <li class="#">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -97,6 +71,7 @@
                         <li><a href="#"><i class="material-icons">sort</i> List</a></li>
                     </ul>
                 </li>
+                </c:if>
                 <!-- Exit -->
                 <li>
                     <a href="#">
