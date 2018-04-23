@@ -1,7 +1,6 @@
 package com.gnu.app.service.impl;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,7 @@ public class LoginServiceImpl  implements LoginService{
 	private LoginDAO loginDAO;
 	
 	@Override
-	public boolean login(HashMap<String, String> map) throws Exception {
+	public HashMap<String, String> login(HashMap<String, String> map) throws Exception {
 		return 	loginDAO.login(map);
 	}
 

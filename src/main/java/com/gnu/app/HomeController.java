@@ -32,34 +32,7 @@ public class HomeController {
 	/** LoginService */
 	@Resource(name = "loginService")
 	private LoginService loginService;
-	
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
-	}
-	
-	
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
-	public String test(HttpServletRequest request) throws Exception{
-		
-		System.out.println("dddd");
-		
-		return "member/loginForm";
-	}
-	
+
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(HttpServletRequest request, @ModelAttribute("member") Member member) throws Exception{
@@ -97,13 +70,14 @@ public class HomeController {
         map.put("ID", member.getId());
         map.put("PWD", member.getPwd());
         
-		boolean logincheck = loginService.login(map);
+        HashMap<String, String> resultMap = loginService.login(map);
 		String returnURL = "";
-		if(logincheck)
+		if(Integer.parseInt(resultMap.get("CNT"))==1)
 		{
 			System.out.println("로그인성공");
+			member.setAuth(resultMap.get("AUTH"));
 			session.setAttribute("member", member);
-			returnURL = "home";
+			returnURL = "main";
 		}else {
 			System.out.println("로그인실패");
 			returnURL = "member/loginForm";
