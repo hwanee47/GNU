@@ -4,7 +4,14 @@ public class Member {
 	String id;
 	String pwd;
 	String name;
+	String auth;
 	
+	public String getAuth() {
+		return auth;
+	}
+	public void setAuth(String auth) {
+		this.auth = auth;
+	}
 	public String getId() {
 		return id;
 	}

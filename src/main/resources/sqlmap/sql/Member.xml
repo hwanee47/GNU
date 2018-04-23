@@ -3,10 +3,11 @@
 <sqlMap namespace="Member">
 
 
-    <select id="loginCheck" parameterClass="Map" resultClass="Integer">
+    <select id="loginCheck" parameterClass="Map" resultClass="HashMap">
     	/*Member.loginCheck*/
          SELECT 
-         	COUNT(*) 
+         	CAST (COUNT(*) AS VARCHAR(10)) AS CNT
+         	,MAX(AUTH) AS AUTH
          FROM 
          	MEMBER
          WHERE
@@ -22,12 +23,14 @@
     		ID
     		,PASSWORD
     		,NAME
+    		,AUTH
     	)
     	VALUES
     	(
     		'$ID$'
     		,'$PWD$'
     		,'$NAME$'
+    		,'USER'
     	)
     	
     

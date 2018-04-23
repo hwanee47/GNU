@@ -19,10 +19,10 @@ public interface LoginService {
 	/**
 	 * 로그인처리
 	 * @param map - 화면에서 입력한 로그인정보
-	 * @return booelan  
+	 * @return HashMap<String, String>  
 	 * @exception Exception
 	 */
-	public boolean login(HashMap<String, String> map) throws Exception;
+	public HashMap<String, String> login(HashMap<String, String> map) throws Exception;
 	
 	
 	/**
