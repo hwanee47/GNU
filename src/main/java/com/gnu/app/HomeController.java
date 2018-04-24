@@ -111,6 +111,13 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping(value = "/arduino.do", method = RequestMethod.GET)
+	public void arduino(HttpServletRequest request) throws Exception{
+		
+		System.out.println("arduino");
+	}
+	
+	
 	
 
 	
