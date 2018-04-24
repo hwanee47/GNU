@@ -71,8 +71,20 @@
 	<script>
 		$(document).ready(function() {
 			
+			var userId = getCookie("cookieUserId");
+			
+			$('.form-signin input[name="id"]').val(userId);
+			
+			
 			$('#btn-login').click(function(){
 				$('.form-signin').attr("action","${pageContext.request.contextPath }/home/login.do").submit();
+				
+				if($("input[name='rememberMe']").is(":checked")){ // ID 기억하기 체크시 쿠키에 저장
+	                var userId = $(".form-signin input[name='id']").val();
+	                setCookie("cookieUserId", userId, 7); // 7일동안 쿠키 보관
+	            } else {
+	                deleteCookie("cookieUserId");
+	            }
 			});
 			
 			$('#btn-register').click(function(){
@@ -80,6 +92,34 @@
 			});
 
 		})
+		
+		function getCookie(cookieName){
+			cookieName = cookieName + "=";
+			var cookieData = document.cookie;
+			var start = cookieData.indexOf(cookieName);
+			var cookieValue = "";
+			if(start != -1){
+				start += cookieName.length;
+	            var end = cookieData.indexOf(';', start);
+	            if(end == -1) end = cookieData.length;
+	            cookieValue = cookieData.substring(start, end);
+			}
+			return unescape(cookieValue);
+		}
+		
+		
+		function setCookie(cookieName, value, exdays){
+	        var exdate = new Date();
+	        exdate.setDate(exdate.getDate()+exdays);
+	        var cookieValue = escape(value)+((exdays==null)? "": "; expires="+exdate.toGMTString());
+	        document.cookie = cookieName+"="+cookieValue;
+	    }
+		
+	    function deleteCookie(cookieName){
+	        var expireDate = new Date();
+	        expireDate.setDate(expireDate.getDate()-1);
+	        document.cookie = cookieName+"= "+"; expires="+expireDate.toGMTString();
+	    }
 	</script>
 </body>
 </html>
