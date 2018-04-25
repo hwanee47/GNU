@@ -34,12 +34,9 @@ public class HomeController {
 	private LoginService loginService;
 
 	
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
-	public String login() throws Exception{
-		return "member/loginForm";
-	}
+
 	
-	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/login.do")
 	public String loginCheck(HttpServletRequest request, @ModelAttribute("member") Member member) throws Exception{
 		HttpSession session = (HttpSession) request.getSession();
 		
