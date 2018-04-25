@@ -19,7 +19,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		logger.info("session check===================");
+		System.out.println("session check===================");
 		//요청의 세션이 존재하지않으면 세션생성 X
 		HttpSession session = request.getSession(false);
 		
