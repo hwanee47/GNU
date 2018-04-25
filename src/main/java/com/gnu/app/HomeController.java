@@ -111,6 +111,13 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping(value = "/logout.do")
+	public String logout(HttpSession session) throws Exception{
+		session.invalidate();
+		return "member/loginForm";
+	}
+	
+	
 	@RequestMapping(value = "/arduino.do", method = RequestMethod.GET)
 	public void arduino(HttpServletRequest request) throws Exception{
 		

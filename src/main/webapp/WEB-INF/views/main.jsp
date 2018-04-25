@@ -74,8 +74,8 @@
                 </c:if>
                 <!-- Exit -->
                 <li>
-                    <a href="#">
-                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">exit_to_app</span> Exit
+                    <a href="${pageContext.request.contextPath}/home/logout.do">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">exit_to_app</span> Logout
                     </a>
                 </li>
             </ul>

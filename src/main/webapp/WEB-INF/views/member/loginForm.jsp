@@ -72,8 +72,10 @@
 		$(document).ready(function() {
 			
 			var userId = getCookie("cookieUserId");
+			var userPwd = getCookie("cookieUserPwd");
 			
 			$('.form-signin input[name="id"]').val(userId);
+			$('.form-signin input[name="pwd"]').val(userPwd);
 			
 			
 			$('#btn-login').click(function(){
@@ -81,9 +83,12 @@
 				
 				if($("input[name='rememberMe']").is(":checked")){ // ID 기억하기 체크시 쿠키에 저장
 	                var userId = $(".form-signin input[name='id']").val();
+	                var userPwd = $(".form-signin input[name='pwd']").val();
 	                setCookie("cookieUserId", userId, 7); // 7일동안 쿠키 보관
+	                setCookie("cookieUserPwd", userPwd, 7); // 7일동안 쿠키 보관
 	            } else {
 	                deleteCookie("cookieUserId");
+	                deleteCookie("cookieUserPwd");
 	            }
 			});
 			
