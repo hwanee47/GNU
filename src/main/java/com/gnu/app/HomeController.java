@@ -35,51 +35,35 @@ public class HomeController {
 
 	
 
+	@RequestMapping(value = "/loginForm.do")
+	public String loginForm() throws Exception{
+		return "member/loginForm";
+	}
+	
+	
+
 	
 	@RequestMapping(value = "/login.do")
-	public String loginCheck(HttpServletRequest request, @ModelAttribute("member") Member member) throws Exception{
-		HttpSession session = (HttpSession) request.getSession();
+	public String loginCheck(HttpSession session, @ModelAttribute("member") Member member) throws Exception{
 		
-		//System.out.println(session);
-		
-		String ip = request.getHeader("X-Forwarded-For");
-
-		if (ip == null) {
-            ip = request.getHeader("Proxy-Client-IP");
-            logger.info(">>>> Proxy-Client-IP : " + ip);
-        }
-        if (ip == null) {
-            ip = request.getHeader("WL-Proxy-Client-IP"); // 웹로직
-            logger.info(">>>> WL-Proxy-Client-IP : " + ip);
-        }
-        if (ip == null) {
-            ip = request.getHeader("HTTP_CLIENT_IP");
-            logger.info(">>>> HTTP_CLIENT_IP : " + ip);
-        }
-        if (ip == null) {
-            ip = request.getHeader("HTTP_X_FORWARDED_FOR");
-            logger.info(">>>> HTTP_X_FORWARDED_FOR : " + ip);
-        }
-        if (ip == null) {
-            ip = request.getRemoteAddr();
-        }
-
-	        
-	    System.out.println(ip+"에서 접속"); 
-        
+        String returnURL = "";
         
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("ID", member.getId());
+        
+    	map.put("ID", member.getId());
         map.put("PWD", member.getPwd());
+
         
         HashMap<String, String> resultMap = loginService.login(map);
-		String returnURL = "";
+		
 		if(Integer.parseInt(resultMap.get("CNT"))==1)
 		{
 			System.out.println("로그인성공");
 			member.setAuth(resultMap.get("AUTH"));
 			session.setAttribute("member", member);
-			returnURL = "main";
+			//returnURL = "redirect:/com/pageLink.do?link=main";
+			//returnURL = "redirect:/com/pageLink.do?link=decorators/decorator";
+			returnURL = "decorators/decorator";
 		}else {
 			System.out.println("로그인실패");
 			returnURL = "member/loginForm";

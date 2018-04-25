@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+	<!-- default directory 설정 -->
+	<!-- <decorators defaultdir="/WEB-INF/views/decorators">
+	
+		decorators를 적용시키지 않을 url 패턴
+		<excludes>
+			<pattern>/home/loginForm.do</pattern>
+			<pattern>/index.jsp</pattern>
+		</excludes>
+	
+		<decorator name="Layout" page="/WEB-INF/views/decorators/decorator.jsp">
+			<pattern>/com/pageLink*</pattern> 
+		</decorator>
+	
+	</decorators> -->
+
+</sitemesh>
+
+
+
