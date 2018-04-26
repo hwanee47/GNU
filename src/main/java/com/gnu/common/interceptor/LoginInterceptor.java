@@ -25,12 +25,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		if(session == null) {
 			System.out.println("세션없음.");
+			response.sendRedirect(request.getContextPath()+"/home/loginForm.do");
 			return false;
 		}
 		
-		Member member = (Member) session.getAttribute("member");
 		
-		if(member == null) {
+		if(session.getAttribute("member") == null) {
 			System.out.println("member세션없음");
 			response.sendRedirect(request.getContextPath()+"/home/loginForm.do");
 			return false;

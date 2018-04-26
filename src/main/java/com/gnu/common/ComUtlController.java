@@ -1,10 +1,12 @@
 package com.gnu.common;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,9 +21,12 @@ public class ComUtlController {
 	
 	
 	@RequestMapping(value = "/pageLink.do")
-	public String moveToPage(@RequestParam("link") String linkPage, HttpSession session) throws Exception{
+	public String moveToPage(@RequestParam("link") String linkPage, HttpServletRequest request, ModelMap model) throws Exception{
 		
 		String link = linkPage;
+		
+		//메뉴권한을 위해 member객체를 뷰로 보내줌.
+		model.addAttribute("member", request.getSession().getAttribute("member"));
 		
 		if (linkPage==null || linkPage.equals(""))
 		{

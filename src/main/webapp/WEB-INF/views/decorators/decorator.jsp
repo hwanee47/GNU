@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#" onclick="fn_main_headPageMove('main')">
-                <b>GNU 스마트휴지걸이</b>
+                <b>GNU 스마트휴지걸이 ${member.auth} gg</b>
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,9 +1,6 @@
 package com.gnu.app;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,10 +9,10 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gnu.app.service.LoginService;
 import com.gnu.app.vo.Member;
@@ -44,7 +41,7 @@ public class HomeController {
 
 	
 	@RequestMapping(value = "/login.do")
-	public String loginCheck(HttpSession session, @ModelAttribute("member") Member member) throws Exception{
+	public String loginCheck(HttpServletRequest request, @ModelAttribute("member") Member member, RedirectAttributes redirectAttr) throws Exception{
 		
         String returnURL = "";
         
@@ -60,10 +57,12 @@ public class HomeController {
 		{
 			System.out.println("로그인성공");
 			member.setAuth(resultMap.get("AUTH"));
-			session.setAttribute("member", member);
-			//returnURL = "redirect:/com/pageLink.do?link=main";
-			//returnURL = "redirect:/com/pageLink.do?link=decorators/decorator";
-			returnURL = "decorators/decorator";
+			
+			request.getSession().setAttribute("member", member);
+			
+			redirectAttr.addFlashAttribute("member", member);
+			
+			returnURL = "redirect:/com/pageLink.do?link=decorators/decorator";
 		}else {
 			System.out.println("로그인실패");
 			returnURL = "member/loginForm";
