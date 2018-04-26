@@ -62,7 +62,7 @@ public class HomeController {
 			
 			redirectAttr.addFlashAttribute("member", member);
 			
-			returnURL = "redirect:/com/pageLink.do?link=decorators/decorator";
+			returnURL = "redirect:/com/pageLink.do?link=main";
 		}else {
 			System.out.println("로그인실패");
 			returnURL = "member/loginForm";
