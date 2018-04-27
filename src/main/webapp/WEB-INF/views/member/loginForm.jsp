@@ -29,10 +29,10 @@
 			<div class="tab-content">
 				<div id="login-form" class="tab-pane fade in active">
 					<div class="wrapper">
-						<form class="form-signin" method="post">
+						<form class="form-signin" name="loginfrm" method="post">
 							<h2 class="form-signin-heading">LOGIN <span class="glyphicon glyphicon-user"></span></h2>
-							<input type="text" class="form-control" name="id" placeholder="Enter your id" required="" autofocus=""  value='<c:if test="${member.id ne null}">${member.id}</c:if>'/> 
-							<input type="password" class="form-control" name="pwd" placeholder="Enter your password" required=""  value='<c:if test="${member.pwd ne null}">${member.pwd}</c:if>'/> 
+							<input type="text" class="form-control" name="j_username" placeholder="Enter your id" required="" autofocus=""  value='<c:if test="${member.id ne null}">${member.id}</c:if>'/> 
+							<input type="password" class="form-control" name="j_password" placeholder="Enter your password" required=""  value='<c:if test="${member.pwd ne null}">${member.pwd}</c:if>'/> 
 							<label class="checkbox">
 								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 								<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
@@ -79,7 +79,7 @@
 			
 			
 			$('#btn-login').click(function(){
-				$('.form-signin').attr("action","${pageContext.request.contextPath }/home/login.do").submit();
+				$('.form-signin').attr("action","${pageContext.request.contextPath }/j_spring_security_check").submit();
 				
 				if($("input[name='rememberMe']").is(":checked")){ // ID 기억하기 체크시 쿠키에 저장
 	                var userId = $(".form-signin input[name='id']").val();

@@ -30,7 +30,7 @@
     		'$ID$'
     		,'$PWD$'
     		,'$NAME$'
-    		,'USER'
+    		,'ROLE_USER'
     	)
     	
     

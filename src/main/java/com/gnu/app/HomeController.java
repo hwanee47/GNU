@@ -42,7 +42,7 @@ public class HomeController {
 	
 
 	
-	@RequestMapping(value = "/login.do")
+	/*@RequestMapping(value = "/login.do")
 	public String loginCheck(HttpServletRequest request, @ModelAttribute("member") Member member, RedirectAttributes redirectAttr) throws Exception{
 		
         String returnURL = "";
@@ -72,7 +72,7 @@ public class HomeController {
 		
 		return returnURL;
 	}
-	
+	*/
 	
 	
 	@RequestMapping(value = "/register.do", method = RequestMethod.POST)

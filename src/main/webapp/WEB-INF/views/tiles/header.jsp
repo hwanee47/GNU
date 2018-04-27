@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
@@ -74,16 +75,20 @@
 							</a></li>
 						</ul></li>
 					<li class="separator">System</li>
+					
 					<!-- Users -->
+					<sec:authorize ifAnyGranted="ROLE_ADMIN">
 					<li class="#"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"
 						onclick="fn_main_headPageMove('member/manageMember')"> <span
 							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
 							Users 
 					</a></li>
+					</sec:authorize>
+					
 					<!-- Exit -->
 					<li><a
-						href="${pageContext.request.contextPath}/home/logout.do"> <span
+						href="${pageContext.request.contextPath}/j_spring_security_logout"> <span
 							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">exit_to_app</span>
 							Logout
 					</a></li>

@@ -14,10 +14,16 @@
 			p:password="${db.password}"/> -->
 	
 	<!-- connection info -->
-	<context:property-placeholder location="classpath:/property/db.properties"/>
+	<!-- <context:property-placeholder location="classpath:/property/db.properties"/>
 			
 	<jdbc:embedded-database id="dataSource" type="HSQL">
 		<jdbc:script location= "classpath:/db/sampledb.sql"/>
-	</jdbc:embedded-database>
-		
+	</jdbc:embedded-database> -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/testlib" />
+        <property name="username" value="root"/>
+        <property name="password" value="1234"/>
+    </bean>		
 </beans>
