@@ -35,4 +35,13 @@
     	
     
     </insert>
+    
+    
+    <select id="selectMemberList" resultClass="HashMap">
+    	/*Member.selectMemberList*/
+    	SELECT
+    		*
+    	FROM
+    		MEMBER
+    </select>
 </sqlMap>

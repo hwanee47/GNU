@@ -1,6 +1,7 @@
 package com.gnu.app;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -76,9 +78,6 @@ public class HomeController {
 	@RequestMapping(value = "/register.do", method = RequestMethod.POST)
 	public String register(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
 		
-		System.out.println(member.getName());
-		System.out.println(member.getId());
-		System.out.println(member.getPwd());
 		
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("ID", member.getId());
@@ -95,6 +94,18 @@ public class HomeController {
 	public String logout(HttpSession session) throws Exception{
 		session.invalidate();
 		return "member/loginForm";
+	}
+	
+	
+	@RequestMapping(value = "/searchMemberList.do")
+	public String searchMemberList(ModelMap model) throws Exception{
+		
+		/*사용자 조회*/
+		List<HashMap<String,String>> list = loginService.searchMemberList();
+		
+		model.addAttribute("memberList", list);
+		
+		return "member/manageMember";
 	}
 	
 	

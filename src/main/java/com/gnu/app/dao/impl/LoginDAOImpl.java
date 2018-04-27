@@ -1,6 +1,7 @@
 package com.gnu.app.dao.impl;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -33,6 +34,12 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 	@Override
 	public void register(HashMap<String, String> map) throws Exception {
 		insert("Member.insertMember", map);
+	}
+
+
+	@Override
+	public List<HashMap<String,String>> selectMemberList() throws Exception {
+		return (List<HashMap<String,String>>)list("Member.selectMemberList");
 	}
 	
 	

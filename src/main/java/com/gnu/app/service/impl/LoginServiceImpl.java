@@ -1,6 +1,7 @@
 package com.gnu.app.service.impl;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,11 @@ public class LoginServiceImpl  implements LoginService{
 	@Override
 	public void register(HashMap<String, String> map) throws Exception {
 		loginDAO.register(map);
+	}
+
+	@Override
+	public List<HashMap<String,String>> searchMemberList() throws Exception {
+		return loginDAO.selectMemberList();
 	}
 	
 	

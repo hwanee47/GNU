@@ -74,15 +74,13 @@
 							</a></li>
 						</ul></li>
 					<li class="separator">System</li>
-					<c:if test="${member.auth eq 'ADMIN'}">
-						<!-- Users -->
-						<li class="#"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"
-							onclick="fn_main_headPageMove('member/manageUser')"> <span
-								class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
-								Users 
-						</a></li>
-					</c:if>
+					<!-- Users -->
+					<li class="#"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"
+						onclick="fn_main_headPageMove('member/manageMember')"> <span
+							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
+							Users 
+					</a></li>
 					<!-- Exit -->
 					<li><a
 						href="${pageContext.request.contextPath}/home/logout.do"> <span

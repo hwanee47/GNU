@@ -33,4 +33,13 @@ public interface LoginService {
 	 */
 	public void register(HashMap<String, String> map) throws Exception;
 	
+	
+	/**
+	 * 사용자 리스트 조회처리
+	 * @param 
+	 * @return  List - 사용자리스트   
+	 * @exception Exception
+	 */
+	public List<HashMap<String,String>> searchMemberList() throws Exception;
+	
 }
