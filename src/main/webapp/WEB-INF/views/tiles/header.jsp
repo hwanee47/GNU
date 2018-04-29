@@ -53,7 +53,7 @@
 
 					<li class="separator">Content</li>
 					<!-- Page -->
-					<li class=""><a href="#" class="dropdown-toggle"
+					<!-- <li class=""><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <span
 							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">description</span>
 							Pages <span class="caret"></span>
@@ -61,17 +61,21 @@
 						<ul class="dropdown-menu forAnimate" role="menu">
 							<li><a href="#"><i class="material-icons">add</i> Add</a></li>
 							<li><a href="#"><i class="material-icons">sort</i> List</a></li>
-						</ul></li>
+						</ul></li> -->
 					<!-- Tags -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <span style="font-size: 16px;"
 							class="pull-right hidden-xs showopacity glyphicon material-icons">label</span>
-							Tags <span class="caret"></span>
+							FLOOR <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu forAnimate" role="menu">
-							<li><a href="#"> <i class="material-icons">add</i> Add
+							<li><a href="#" style="padding-left:20px;"> 1층
 							</a></li>
-							<li><a href="#"> <i class="material-icons">sort</i> List
+							<li><a href="#" style="padding-left:20px;"> 2층
+							</a></li>
+							<li><a href="#" style="padding-left:20px;"> 3층
+							</a></li>
+							<li><a href="#" style="padding-left:20px;"> 4층
 							</a></li>
 						</ul></li>
 					<li class="separator">System</li>
