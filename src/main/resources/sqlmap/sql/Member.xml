@@ -24,6 +24,7 @@
     		,PASSWORD
     		,NAME
     		,AUTH
+    		,ENABLED
     	)
     	VALUES
     	(
@@ -31,6 +32,7 @@
     		,'$PWD$'
     		,'$NAME$'
     		,'ROLE_USER'
+    		,'1'
     	)
     	
     

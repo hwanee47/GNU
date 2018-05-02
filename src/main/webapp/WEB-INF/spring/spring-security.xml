@@ -24,26 +24,26 @@
 				authentication-failure-url="/login.do?fail=true"
 		/>
 		
-		<logout logout-success-url="/home/loginForm.do" invalidate-session="true"/>
+		<logout logout-success-url="/home/loginForm.do" delete-cookies="JSESSIONID"/>
 		
-		<!-- <session-management>
+		<session-management>
 			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
-		</session-management> -->
+		</session-management>
 	</http>	
 	
 	
 	
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
+			<!-- <user-service>
 				<user name="user" password="user" authorities="ROLE_USER"/>
 				<user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-			</user-service>
-			<!-- <jdbc-user-service data-source-ref="dataSource" id="userService"
- users-by-username-query="SELECT EMAIL as username, PASSWD as password,ENABLE D as enabled​ FROM user WHERE EMAIL=?"
- authorities-by-username-query="SELECT EMAIL as username, AUTHORITY AS authority 
-          FROM user u
-          WHERE EMAIL=?"/> -->
+			</user-service> -->
+			<jdbc-user-service data-source-ref="dataSource" id="userService"
+ users-by-username-query="SELECT id as username, password as password,ENABLED as enabled​ FROM member WHERE id=?"
+ authorities-by-username-query="SELECT id as username, AUTH AS authority 
+          FROM member
+          WHERE id=?"/>
 		</authentication-provider>
 	</authentication-manager>
 	
