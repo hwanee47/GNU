@@ -26,9 +26,9 @@
 		
 		<logout logout-success-url="/home/loginForm.do" delete-cookies="JSESSIONID"/>
 		
-		<session-management>
+		<!-- <session-management>
 			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
-		</session-management>
+		</session-management> -->
 	</http>	
 	
 	

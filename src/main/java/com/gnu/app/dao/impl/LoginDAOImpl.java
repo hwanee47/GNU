@@ -3,8 +3,10 @@ package com.gnu.app.dao.impl;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
+import com.gnu.app.HomeController;
 import com.gnu.app.dao.LoginDAO;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
@@ -24,6 +26,8 @@ import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 @Repository
 public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 
+	private static final Logger logger = Logger.getLogger(LoginDAOImpl.class);
+	
 	@Override
 	public HashMap<String, String> login(HashMap<String, String> map) throws Exception {
 

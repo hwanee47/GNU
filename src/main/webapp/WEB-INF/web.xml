@@ -14,6 +14,14 @@
 			classpath*:spring/*.xml
 		</param-value>
 	</context-param>
+	
+	<listener>
+	  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<context-param>
+	    <param-name>log4jConfigLocation</param-name>
+	    <param-value>classpath:log/log4j.xml</param-value>
+	</context-param>
 
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -28,6 +36,8 @@
 	    </listener-class>
 	</listener>
 
+
+	
 
 
 	<!-- Processes application requests -->

@@ -7,14 +7,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gnu.app.service.LoginService;
 import com.gnu.app.vo.Member;
@@ -26,8 +24,8 @@ import com.gnu.app.vo.Member;
 @RequestMapping(value= "/home")
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	//private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = Logger.getLogger(HomeController.class);
 	/** LoginService */
 	@Resource(name = "loginService")
 	private LoginService loginService;
@@ -99,7 +97,12 @@ public class HomeController {
 	
 	@RequestMapping(value = "/searchMemberList.do")
 	public String searchMemberList(ModelMap model) throws Exception{
-		
+		logger.debug("TEST");
+		logger.info("TEST");
+		logger.warn("TEST");
+		logger.error("TEST");
+		logger.fatal("TEST");
+		System.out.println("sysout!");
 		/*사용자 조회*/
 		List<HashMap<String,String>> list = loginService.searchMemberList();
 		
