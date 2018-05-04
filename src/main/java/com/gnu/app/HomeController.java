@@ -97,15 +97,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/searchMemberList.do")
 	public String searchMemberList(ModelMap model) throws Exception{
-		logger.debug("TEST");
-		logger.info("TEST");
-		logger.warn("TEST");
-		logger.error("TEST");
-		logger.fatal("TEST");
-		System.out.println("sysout!");
+		
 		/*사용자 조회*/
 		List<HashMap<String,String>> list = loginService.searchMemberList();
-		
+		System.out.println(list.size()+"ZZZ");
 		model.addAttribute("memberList", list);
 		
 		return "member/manageMember";
