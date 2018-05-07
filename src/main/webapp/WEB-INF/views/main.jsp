@@ -1,110 +1,184 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
-<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,  initial-scale=1, minimum-scale=1">
-	<title>GNU Ïä§ÎßàÌä∏Ìú¥ÏßÄÍ±∏Ïù¥(6Ï°∞)</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
 </head>
-
-
 <body>
 <div class="container">
-        <h3 style="float:left;">405Îèô Ìú¥ÏßÄÌòÑÌô©</h3>
-    <div style="margin-bottom:40px; margin-top:7px; margin-left:400px;">
-    <div><span class="label label-success"> Ìú¥ÏßÄÏûàÏùå</div>
-    <div><span class="label label-danger"> Ìú¥ÏßÄÏóÜÏùå</div>
-    </div>
-	<div class="row">
-		<div class="span5">
+   <div class="row">
+      <div class="span5">
             <table class="table table-striped table-condensed">
                   <thead>
-                    <b>405Îèô 1Ï∏µ</b>
+                       <h1><strong><div align="center">405µø »ﬁ¡ˆ«ˆ»≤</div><strong></strong></h1>
+                        <span class="label label-success" style="float:right;">»ﬁ¡ˆ¿÷¿Ω</span><br>
+                        <span class="label label-danger" style="float:right;">»ﬁ¡ˆæ¯¿Ω</span><br>
+                  <tr>
+                      <th>405µø</th>
+                      <th>1√˛</th>                                       
+                  </tr>
               </thead>   
               <tbody>
                 <tr>
-                    <td>Ï§ëÏïô</td>
-                    <td>ÎÇ®Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-success">Ïπ∏1</span>
-                    <td><span class="label label-danger">Ïπ∏2</span>
-                    <td><span class="label label-success">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-success">Ïπ∏5</span>
+                    <td>¡ﬂæ”</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>
                     </td>                                       
                 </tr>
                 <tr>
-                    <td>Ï§ëÏïô</td>
-                    <td>Ïó¨Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-danger">Ïπ∏1</span>
-                    <td><span class="label label-danger">Ïπ∏2</span>
-                    <td><span class="label label-danger">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-success">Ïπ∏5</span>
-                    </td>                                       
+                    <td>¡ﬂæ”</td>
+                    <td>ø©¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-danger">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                        
                 </tr>
                 <tr>
-                    <td>ÏÑúÌé∏</td>
-                    <td>ÎÇ®Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-success">Ïπ∏1</span>
-                    <td><span class="label label-success">Ïπ∏2</span>
-                    <td><span class="label label-success">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-danger">Ïπ∏5</span>
-                    </td>                                       
+                    <td>º≠∆Ì</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-success">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                   
                 </tr>
-                                           
-              </tbody>
-            </table>
-            <table class="table table-striped table-condensed">
-                  <thead>
-                    <b>405Îèô 2Ï∏µ</b>
+                <br>
+                <thead>
+                  <tr>
+                      <th><br>405µø</th>
+                      <th>2√˛</th>                                       
+                  </tr>
               </thead>   
               <tbody>
                 <tr>
-                    <td>Ï§ëÏïô</td>
-                    <td>ÎÇ®Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-success">Ïπ∏1</span>
-                    <td><span class="label label-danger">Ïπ∏2</span>
-                    <td><span class="label label-success">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-success">Ïπ∏5</span>
+                    <td>¡ﬂæ”</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>     
                     </td>                                       
                 </tr>
                 <tr>
-                    <td>Ï§ëÏïô</td>
-                    <td>Ïó¨Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-danger">Ïπ∏1</span>
-                    <td><span class="label label-danger">Ïπ∏2</span>
-                    <td><span class="label label-success">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-success">Ïπ∏5</span>
+                    <td>¡ﬂæ”</td>
+                    <td>ø©¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-danger">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                    
+                </tr>
+                <tr>
+                    <td>º≠∆Ì</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-success">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                       
+                </tr>
+                <thead>
+                  <tr>
+                      <th><br>405µø</th>
+                      <th>3√˛</th>                                       
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    <td>¡ﬂæ”</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>
                     </td>                                       
                 </tr>
                 <tr>
-                    <td>ÏÑúÌé∏</td>
-                    <td>ÎÇ®Ïûê</td>
-                    <td>ÏûÖÍµ¨</td>
-                    <td><span class="label label-success">Ïπ∏1</span>
-                    <td><span class="label label-success">Ïπ∏2</span>
-                    <td><span class="label label-success">Ïπ∏3</span>
-                    <td><span class="label label-danger">Ïπ∏4</span>
-                    <td><span class="label label-danger">Ïπ∏5</span>
+                    <td>¡ﬂæ”</td>
+                    <td>ø©¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-danger">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                       
+                </tr>
+                <tr>
+                    <td>º≠∆Ì</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-success">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                       
+                </tr>
+                <thead>
+                  <tr>
+                      <th><br>405µø</th>
+                      <th>4√˛</th>                                       
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    <td>¡ﬂæ”</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>
                     </td>                                       
                 </tr>
-                                           
+                <tr>
+                    <td>¡ﬂæ”</td>
+                    <td>ø©¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-danger">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                      
+                </tr>
+                <tr>
+                    <td>º≠∆Ì</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                        
+                </tr>
+                <thead>
+                  <tr>
+                      <th><br>405µø</th>
+                      <th>5√˛</th>                                       
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    <td>¡ﬂæ”</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-danger">ƒ≠1</span>
+                    <td><span class="label label-danger">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td>¡ﬂæ”</td>
+                    <td>ø©¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-success">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                      
+                </tr>
+                <tr>
+                    <td>º≠∆Ì</td>
+                    <td>≥≤¿⁄</td>
+                    <td>¿‘±∏</td>
+                    <td><span class="label label-success">ƒ≠1</span>
+                    <td><span class="label label-success">ƒ≠2</span>
+                    <td><span class="label label-success">ƒ≠3</span>                                      
+                </tr>                                             
               </tbody>
             </table>
             </div>
-	</div>
+   </div>
 </div>
 </body>
 </html>

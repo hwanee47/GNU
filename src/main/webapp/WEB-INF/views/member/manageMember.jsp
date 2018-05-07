@@ -5,15 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<meta name="viewport"
-	content="width=device-width,  initial-scale=1, minimum-scale=1">
+<meta name="viewport" content="width=device-width,  initial-scale=1, minimum-scale=1">
 	
 
 </head>
 <body>
 	
 
-	<div class="container" id="div-container-manageUser">
+	<div class="container" id="div-container-manageUser" style="width:100%">
 		<div class="row">
 			<button class="btn btn-sm btn-primary btn-block" type="submit" id="btn-search"><span>조회</span></button>
 			<center><h2><b>USER LIST</b></h2></center>
@@ -30,9 +29,20 @@
 								<div class="square-box pull-left">
 									<span class="glyphicon glyphicon-user glyphicon-lg"></span>
 								</div>
-								<h5>${memberList.ID}</h5>
-								<h4>Name: ${memberList.NAME}</h4>
-								<p>Title: Manager</p>
+								<h5>
+								아이디 : ${memberList.ID}
+								<button type="button" class="btn btn-default btn-sm" style="float:right; margin-top:-10px;">
+						          <span class="glyphicon glyphicon-trash"></span> 
+						        </button>
+								</h5>
+								<h5>
+								이&nbsp&nbsp&nbsp&nbsp름 : ${memberList.NAME}
+								<button type="button" class="btn btn-default btn-sm" style="float:right; margin-top:-10px;">
+						          <span class="glyphicon glyphicon-pencil"></span>
+						        </button>
+								</h5>
+								
+								권&nbsp&nbsp&nbsp&nbsp한 : <c:if test="${memberList.AUTH eq 'ROLE_ADMIN'}">관리자</c:if><c:if test="${memberList.AUTH eq 'ROLE_USER'}">일반</c:if>
 							</div>
 						</div>
 					</c:forEach>

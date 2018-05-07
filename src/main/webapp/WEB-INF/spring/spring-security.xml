@@ -21,7 +21,7 @@
 		<form-login
 			login-page="/home/loginForm.do"
 			default-target-url="/com/pageLink.do?link=main"
-				authentication-failure-url="/login.do?fail=true"
+				authentication-failure-url="/home/loginForm.do?fail=true"
 		/>
 		
 		<logout logout-success-url="/home/loginForm.do" delete-cookies="JSESSIONID"/>
@@ -40,10 +40,8 @@
 				<user name="admin" password="admin" authorities="ROLE_ADMIN"/>
 			</user-service> -->
 			<jdbc-user-service data-source-ref="dataSource" id="userService"
- users-by-username-query="SELECT id as username, password as password,ENABLED as enabled​ FROM member WHERE id=?"
- authorities-by-username-query="SELECT id as username, AUTH AS authority 
-          FROM member
-          WHERE id=?"/>
+ users-by-username-query="SELECT id as username, password as password, enabled as enabled FROM member WHERE id=?"
+ authorities-by-username-query="SELECT id as username, auth AS authority FROM member WHERE id=?"/>
 		</authentication-provider>
 	</authentication-manager>
 	

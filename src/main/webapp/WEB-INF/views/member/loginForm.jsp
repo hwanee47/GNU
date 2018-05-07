@@ -31,6 +31,15 @@
 					<div class="wrapper">
 						<form class="form-signin" name="loginfrm" method="post">
 							<h2 class="form-signin-heading">LOGIN <span class="glyphicon glyphicon-user"></span></h2>
+							
+							<c:if test="${not empty param.fail}">
+							<div style="float:left;">
+							<font color="tomato">
+								${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+							</font>
+							</div>
+							</c:if>
+							
 							<input type="text" class="form-control" name="j_username" placeholder="Enter your id" required="" autofocus=""  value='<c:if test="${member.id ne null}">${member.id}</c:if>'/> 
 							<input type="password" class="form-control" name="j_password" placeholder="Enter your password" required=""  value='<c:if test="${member.pwd ne null}">${member.pwd}</c:if>'/> 
 							<label class="checkbox">
@@ -64,7 +73,7 @@
 				</div>
 
 			</div>
-
+			
 		</div>
 	</div>
 

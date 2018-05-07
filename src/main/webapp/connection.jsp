@@ -19,6 +19,20 @@
 	 Class.forName("com.mysql.jdbc.Driver");
 	 conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 	 stmt = conn.createStatement();
+	 String sql = "SELECT id as username, password as password, enabled as enabled FROM member WHERE id='admin'";
+	 PreparedStatement pstmt = conn.prepareStatement(sql);
+	 
+	 ResultSet rs = pstmt.executeQuery();
+	   //===================================================
+
+
+	   while(rs.next()) {          // 쿼리 결과 보여주기
+	       out.println(rs.getString(1));
+	       out.println(rs.getString(2));
+	       out.println(rs.getString(3));
+	       out.println(rs.getString(4));
+	   }
+	 
 	 conn.close();
 	 out.println("MySql jdbc test: connect ok!!");
 	} catch(Exception e) {
