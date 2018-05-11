@@ -41,4 +41,13 @@ public interface LoginDAO {
 	 */
 	public List<HashMap<String,String>> selectMemberList() throws Exception;
 	
+	
+	/**
+	 * 기기등록 처리
+	 * @param map - 화면에서 입력한 기기정보
+	 * @return   
+	 * @exception Exception
+	 */
+	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception;
+	
 }

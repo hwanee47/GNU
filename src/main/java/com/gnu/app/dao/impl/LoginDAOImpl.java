@@ -46,6 +46,14 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 		System.out.println("TESTSETS");
 		return (List<HashMap<String,String>>)list("Member.selectMemberList");
 	}
+
+
+	@Override
+	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception {
+		insert("Member.insertMachine", map);
+		
+		return (List<HashMap<String,String>>)list("Member.selectMachine");
+	}
 	
 	
 	

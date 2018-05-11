@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gnu.app.service.LoginService;
+import com.gnu.app.vo.Machine;
 import com.gnu.app.vo.Member;
 
 /**
@@ -87,11 +88,24 @@ public class HomeController {
 		return "member/loginForm";
 	}
 	
+	
+	
 	@RequestMapping(value = "/addmachine.do")
-	public String addmachine(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
-		System.out.println("ssibal");
-		return "member/loginForm";
+	public String addmachine(HttpServletRequest request, @ModelAttribute("machine") Machine machine, ModelMap model) throws Exception{
+
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("MACHINE_NAME", machine.getMachineName());
+		map.put("MACHINE_LOCATION", machine.getMachineLocation());
+		
+		
+		List<HashMap<String,String>> list = loginService.addmachine(map);
+		
+		model.addAttribute("machineList", list);
+		
+		return "addmachine";
 	}
+	
+	
 	
 	@RequestMapping(value = "/logout.do")
 	public String logout(HttpSession session) throws Exception{

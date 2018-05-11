@@ -46,4 +46,28 @@
     	FROM
     		MEMBER
     </select>
+    
+    
+    <insert id="insertMachine" parameterClass="Map">
+    	/*Member.insertMachine*/
+    	INSERT INTO MACHINE
+    	(
+    		MACHINE_NAME
+    		,MACHINE_LOCATION
+    	)
+    	VALUES
+    	(
+    		'$MACHINE_NAME$'
+    		,'$MACHINE_LOCATION$'
+    	)
+    </insert>
+    
+    
+    <select id="selectMachine" resultClass="HashMap">
+    	/*Member.selectMachine*/
+    	SELECT
+    		*
+    	FROM
+    		MACHINE
+    </select>
 </sqlMap>

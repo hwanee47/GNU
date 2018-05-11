@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c"         uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,30 +15,20 @@
     <thead>
     <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">새 기기 등록</button></div>
         <tr>
-            <th>기기</th>
             <th>기기 이름</th>
             <th>기기 위치</th>
             <th class="text-center">기기 등록/삭제</th>
         </tr>
     </thead>
-            <tr>
-                <td>1</td>
-                <td>405-0101</td>
-                <td>중앙 남자화장실 1번째 칸</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> 수정</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 삭제</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>405-0102</td>
-                <td>중앙 남자화장실 2번째 칸</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> 수정</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 삭제</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>405-0103</td>
-                <td>중앙 남자화장실 3번째 칸</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> 수정</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 삭제</a></td>
-            </tr>
+    		<c:forEach var="machineList" items="${machineList}">
+    			<tr>
+	                <td>${machineList.MACHINE_NAME}</td>
+	                <td>${machineList.MACHINE_LOCATION}</td>
+	                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> 수정</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 삭제</a></td>
+            	</tr>
+    		</c:forEach>
+            
+            
     </table>
     </div>
 </div>
@@ -55,11 +46,11 @@
 			<form class="form-register">
               <div class="form-group">
                 <label for="Inputname">기기 이름</label>
-                <input type="text" class="form-control" id="Inputname" placeholder="Input name" name="machineName">
+                <input type="text" class="form-control" id="Inputname" placeholder="Input name" name="machineName" value='<c:if test="${machine.machineName ne null}">${machine.machineName}</c:if>'/>
               </div>
               <div class="form-group">
                 <label for="Inputlocation">기기 위치</label>
-                <input type="text" class="form-control" id="Inputlocation" placeholder="Input location" name="machinelocation">
+                <input type="text" class="form-control" id="Inputlocation" placeholder="Input location" name="machineLocation" value='<c:if test="${machine.machineLocation ne null}">${machine.machineLocation}</c:if>' />
               </div>
 		<div class="modal-footer">
 			<div class="btn-group btn-group-justified" role="group" aria-label="group button">

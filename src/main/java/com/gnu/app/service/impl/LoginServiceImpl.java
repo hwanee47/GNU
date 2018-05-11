@@ -41,6 +41,11 @@ public class LoginServiceImpl  implements LoginService{
 	public List<HashMap<String,String>> searchMemberList() throws Exception {
 		return loginDAO.selectMemberList();
 	}
+
+	@Override
+	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception {
+		return loginDAO.addmachine(map);
+	}
 	
 	
 	
