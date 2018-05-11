@@ -87,6 +87,11 @@ public class HomeController {
 		return "member/loginForm";
 	}
 	
+	@RequestMapping(value = "/addmachine.do")
+	public String addmachine(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
+		System.out.println("ssibal");
+		return "member/loginForm";
+	}
 	
 	@RequestMapping(value = "/logout.do")
 	public String logout(HttpSession session) throws Exception{

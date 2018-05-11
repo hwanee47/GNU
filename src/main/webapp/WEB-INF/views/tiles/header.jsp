@@ -50,34 +50,16 @@
 			<div class="collapse navbar-collapse"
 				id="bs-sidebar-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+				
+				<li class="separator">contents</li>
+				
+				<li class="#"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"
+						onclick="fn_main_headPageMove('main')"> <span
+							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
+							휴지 현황
+					</a></li>
 
-					<li class="separator">Content</li>
-					<!-- Page -->
-					<!-- <li class=""><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"> <span
-							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">description</span>
-							Pages <span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu forAnimate" role="menu">
-							<li><a href="#"><i class="material-icons">add</i> Add</a></li>
-							<li><a href="#"><i class="material-icons">sort</i> List</a></li>
-						</ul></li> -->
-					<!-- Tags -->
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"> <span style="font-size: 16px;"
-							class="pull-right hidden-xs showopacity glyphicon material-icons">label</span>
-							FLOOR <span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu forAnimate" role="menu">
-							<li><a href="#" style="padding-left:20px;"> 1층
-							</a></li>
-							<li><a href="#" style="padding-left:20px;"> 2층
-							</a></li>
-							<li><a href="#" style="padding-left:20px;"> 3층
-							</a></li>
-							<li><a href="#" style="padding-left:20px;"> 4층
-							</a></li>
-						</ul></li>
 					<li class="separator">System</li>
 					
 					<!-- Users -->
@@ -86,11 +68,21 @@
 						data-toggle="dropdown"
 						onclick="fn_main_headPageMove('member/manageMember')"> <span
 							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
-							Users 
+							사용자 관리 
 					</a></li>
 					</sec:authorize>
 					
-					<!-- Exit -->
+					<!-- add machine -->
+					<sec:authorize ifAnyGranted="ROLE_ADMIN">
+					<li class="#"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"
+						onclick="fn_main_headPageMove('addmachine')"> <span
+							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
+							기기 등록/삭제 
+					</a></li>
+					</sec:authorize>
+					
+					<!-- logout -->
 					<li><a
 						href="${pageContext.request.contextPath}/j_spring_security_logout"> <span
 							class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">exit_to_app</span>
