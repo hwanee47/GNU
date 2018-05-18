@@ -51,4 +51,15 @@ public interface LoginService {
 	 */
 	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception;
 	
+	
+	/**
+	 * 휴지현황 리스트 조회처리
+	 * @param 
+	 * @return  List - 휴지현황리스트   
+	 * @exception Exception
+	 */
+	public List<HashMap<String,String>> searchNowStatusList() throws Exception;
+	
+	public List<HashMap<String,String>> searchGroupList() throws Exception;
+	
 }

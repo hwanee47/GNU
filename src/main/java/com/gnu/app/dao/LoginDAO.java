@@ -50,4 +50,14 @@ public interface LoginDAO {
 	 */
 	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception;
 	
+	
+	/**
+	 * 휴지현황 리스트 조회처리
+	 * @param 
+	 * @return  List - 휴지현황리스트   
+	 * @exception Exception
+	 */
+	public List<HashMap<String,String>> selectNowStatusList() throws Exception;
+	
+	public List<HashMap<String,String>> selectGroupList() throws Exception;
 }

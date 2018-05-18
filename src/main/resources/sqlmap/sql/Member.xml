@@ -70,4 +70,27 @@
     	FROM
     		MACHINE
     </select>
+    
+    <select id="selectNowStatusList" resultClass="HashMap">
+    	/*Member.selectNowStatusList*/
+    	SELECT
+			DONG
+		    ,FLOOR
+		    ,PLACE
+		    ,GENDER
+			,MAX(CASE WHEN PART='1' THEN FLAG ELSE '' END) PART1
+		    ,MAX(CASE WHEN PART='2' THEN FLAG ELSE '' END) PART2
+			,MAX(CASE WHEN PART='3' THEN FLAG ELSE '' END) PART3
+		 FROM test.machine
+		 GROUP BY DONG
+		    ,FLOOR
+		    ,PLACE
+		    ,GENDER
+		ORDER BY DONG,FLOOR,PLACE,GENDER
+    </select>
+    
+    <select id="selectGroupList" resultClass="HashMap">
+    	/*Member.selectGroupList*/
+    	SELECT DONG, FLOOR FROM MACHINE GROUP BY DONG, FLOOR
+    </select>
 </sqlMap>

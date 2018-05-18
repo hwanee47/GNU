@@ -133,8 +133,27 @@ public class HomeController {
 	}
 	
 	
-	
+	@RequestMapping(value = "/deleteMember.do")
+	public String deleteMember(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
+		
+		System.out.println(member.getId()+"TEST");
+		
+		return "member/manageMember";
+	}
 
+	@RequestMapping(value = "/searchNowStatus.do")
+	public String searchNowStatus(ModelMap model) throws Exception{
+		
+		/*그룹조회*/
+		List<HashMap<String,String>> groupList = loginService.searchGroupList();
+		model.addAttribute("groupList", groupList);
+		
+		/*현상태 조회*/
+		List<HashMap<String,String>> list = loginService.searchNowStatusList();
+		model.addAttribute("nowStatusList", list);
+		
+		return "main";
+	}
 	
 	
 	

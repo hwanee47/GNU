@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,16 +11,66 @@
 <div class="container">
    <div class="row">
       <div class="span5">
+      	<form class="form-status">
+      		<button class="btn btn-sm btn-primary btn-block" type="submit" id="btn-search"><span>Á¶È¸</span></button>
             <table class="table table-striped table-condensed">
                   <thead>
                        <h1><strong><div align="center">405µ¿ ÈÞÁöÇöÈ²</div><strong></strong></h1>
                         <span class="label label-success" style="float:right;">ÈÞÁöÀÖÀ½</span><br>
                         <span class="label label-danger" style="float:right;">ÈÞÁö¾øÀ½</span><br>
-                  <tr>
-                      <th>405µ¿</th>
-                      <th>1Ãþ</th>                                       
-                  </tr>
-              </thead>   
+                  
+              </thead>
+              
+             <c:forEach var="groupList" items="${groupList}">
+	              <tr>
+	              	<th>${groupList.DONG}µ¿</th>
+	              	<th>${groupList.FLOOR}Ãþ</th>
+	              </tr>
+	              
+              	  <c:forEach var="nowStatusList" items="${nowStatusList}">
+              	  	<c:if test="${groupList.DONG eq nowStatusList.DONG && groupList.FLOOR eq nowStatusList.FLOOR}">
+              	  	<tbody>
+              	  		<tr>
+              	  			<td>${nowStatusList.PLACE}</td>
+              	  			<td>${nowStatusList.GENDER}</td>
+              	  			<td>ÀÔ±¸</td>
+              	  			<td>
+								<c:if test="${nowStatusList.PART1 eq 'N'}">
+								   <span class="label label-danger">Ä­1</span>
+								</c:if>
+								<c:if test="${nowStatusList.PART1 eq 'Y'}">
+								   <span class="label label-success">Ä­1</span>
+								</c:if>
+							</td>
+              	  			<td>
+								<c:if test="${nowStatusList.PART2 eq 'N'}">
+								   <span class="label label-danger">Ä­1</span>
+								</c:if>
+								<c:if test="${nowStatusList.PART2 eq 'Y'}">
+								   <span class="label label-success">Ä­1</span>
+								</c:if>
+							</td>
+              	  			<td>
+								<c:if test="${nowStatusList.PART3 eq 'N'}">
+								   <span class="label label-danger">Ä­1</span>
+								</c:if>
+								<c:if test="${nowStatusList.PART3 eq 'Y'}">
+								   <span class="label label-success">Ä­1</span>
+								</c:if>
+							</td>
+              	  			
+              	  		</tr>
+              	  		
+              	  	</tbody>
+              	  	</c:if>	
+              	  </c:forEach>
+              	  
+              </c:forEach>
+              
+             <!--  <tr>
+                  <th>405µ¿</th>
+                  <th>1Ãþ</th>                                       
+              </tr>
               <tbody>
                 <tr>
                     <td>Áß¾Ó</td>
@@ -175,10 +226,20 @@
                     <td><span class="label label-success">Ä­2</span>
                     <td><span class="label label-success">Ä­3</span>                                      
                 </tr>                                             
-              </tbody>
+              </tbody> -->
             </table>
+            </form>
             </div>
    </div>
 </div>
+<script>
+$(document).ready(function() {
+	//$('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
+});
+
+$('#btn-search').click(function(){
+	$('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
+});
+</script>
 </body>
 </html>

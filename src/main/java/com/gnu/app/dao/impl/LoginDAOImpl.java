@@ -54,6 +54,18 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 		
 		return (List<HashMap<String,String>>)list("Member.selectMachine");
 	}
+
+
+	@Override
+	public List<HashMap<String, String>> selectNowStatusList() throws Exception {
+		return (List<HashMap<String,String>>)list("Member.selectNowStatusList");
+	}
+
+
+	@Override
+	public List<HashMap<String, String>> selectGroupList() throws Exception {
+		return (List<HashMap<String,String>>)list("Member.selectGroupList");
+	}
 	
 	
 	
