@@ -48,8 +48,26 @@ public interface LoginDAO {
 	 * @return   
 	 * @exception Exception
 	 */
-	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception;
+	public void addmachine(HashMap<String, String> map) throws Exception;
 	
+	
+	
+	/**
+	 * 기기삭제 처리
+	 * @param map - 화면에서 입력한 기기정보
+	 * @return   
+	 * @exception Exception
+	 */
+	public void deleteMachine(HashMap<String, String> map) throws Exception;
+	
+	
+	/**
+	 * 기기 휴지상태 업데이트
+	 * @param map - 아두이노에서 요청한 파라미터
+	 * @return   
+	 * @exception Exception
+	 */
+	public void updateStatus(HashMap<String, String> map) throws Exception;
 	
 	/**
 	 * 휴지현황 리스트 조회처리
@@ -60,4 +78,6 @@ public interface LoginDAO {
 	public List<HashMap<String,String>> selectNowStatusList() throws Exception;
 	
 	public List<HashMap<String,String>> selectGroupList() throws Exception;
+	
+	public List<HashMap<String,String>> selectMachineList() throws Exception;
 }

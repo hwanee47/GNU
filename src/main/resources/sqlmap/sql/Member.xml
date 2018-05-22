@@ -53,20 +53,35 @@
     	INSERT INTO MACHINE
     	(
     		MACHINE_NAME
-    		,MACHINE_LOCATION
+    		,DONG
+    		,FLOOR
+    		,PLACE
+    		,GENDER
+    		,PART
+    		,FLAG
     	)
     	VALUES
     	(
     		'$MACHINE_NAME$'
-    		,'$MACHINE_LOCATION$'
+    		,'$DONG$'
+    		,'$FLOOR$'
+    		,(CASE WHEN '$PLACE$'='중앙' THEN 'C' ELSE 'W' END)
+    		,(CASE WHEN '$GENDER$'='남자' THEN 'M' ELSE 'W' END)
+    		,'$PART$'
+    		,'N'
     	)
     </insert>
     
     
-    <select id="selectMachine" resultClass="HashMap">
-    	/*Member.selectMachine*/
+    <select id="selectMachineList" resultClass="HashMap">
+    	/*Member.selectMachineList*/
     	SELECT
-    		*
+    		MACHINE_NAME
+    		,DONG
+    		,FLOOR
+    		,(CASE WHEN PLACE='C' THEN '중앙' ELSE '서편' END) AS PLACE
+		    ,(CASE WHEN GENDER='M' THEN '남자' ELSE '여자' END) AS GENDER
+		    ,PART
     	FROM
     		MACHINE
     </select>
@@ -76,8 +91,8 @@
     	SELECT
 			DONG
 		    ,FLOOR
-		    ,PLACE
-		    ,GENDER
+		    ,(CASE WHEN PLACE='C' THEN '중앙' ELSE '서편' END) AS PLACE
+		    ,(CASE WHEN GENDER='M' THEN '남자' ELSE '여자' END) AS GENDER
 			,MAX(CASE WHEN PART='1' THEN FLAG ELSE '' END) PART1
 		    ,MAX(CASE WHEN PART='2' THEN FLAG ELSE '' END) PART2
 			,MAX(CASE WHEN PART='3' THEN FLAG ELSE '' END) PART3
@@ -93,4 +108,22 @@
     	/*Member.selectGroupList*/
     	SELECT DONG, FLOOR FROM MACHINE GROUP BY DONG, FLOOR
     </select>
+    
+    
+    <delete id="deleteMachine" parameterClass="Map">
+    	/*Member.deleteMachine*/
+    	DELETE FROM MACHINE
+    	WHERE
+    		MACHINE_NAME = '$MACHINE_NAME$'
+    </delete>
+    
+    <update	id="updateStatus" parameterClass="Map">
+    	/*Member.updateStatus*/
+    	UPDATE MACHINE
+    	SET
+    		FLAG='$FLAG$'
+    	WHERE
+    		MACHINE_NAME='$MACHINE_NAME$'
+    
+    </update>
 </sqlMap>

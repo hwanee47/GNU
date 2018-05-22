@@ -13,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gnu.app.service.LoginService;
 import com.gnu.app.vo.Machine;
@@ -95,10 +96,26 @@ public class HomeController {
 
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("MACHINE_NAME", machine.getMachineName());
-		map.put("MACHINE_LOCATION", machine.getMachineLocation());
+		map.put("DONG", machine.getDong());
+		map.put("FLOOR", machine.getFloor());
+		map.put("PLACE", machine.getPlace());
+		map.put("GENDER", machine.getGender());
+		map.put("PART", machine.getPart());
 		
+		loginService.addmachine(map);
 		
-		List<HashMap<String,String>> list = loginService.addmachine(map);
+		List<HashMap<String,String>> list = loginService.searchMachineList();
+		
+		model.addAttribute("machineList", list);
+		
+		return "redirect:/home/searchMachineList.do";
+	}
+	
+	
+	@RequestMapping(value = "/searchMachineList.do")
+	public String searchMachineList(HttpServletRequest request, ModelMap model) throws Exception{
+		
+		List<HashMap<String,String>> list = loginService.searchMachineList();
 		
 		model.addAttribute("machineList", list);
 		
@@ -119,7 +136,6 @@ public class HomeController {
 		
 		/*사용자 조회*/
 		List<HashMap<String,String>> list = loginService.searchMemberList();
-		System.out.println(list.size()+"ZZZ");
 		model.addAttribute("memberList", list);
 		
 		return "member/manageMember";
@@ -127,16 +143,17 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/arduino.do", method = RequestMethod.GET)
-	public void arduino(HttpServletRequest request) throws Exception{
+	public void arduino(HttpServletRequest request, @RequestParam("flag") String flag, @RequestParam("machineName") String machineName) throws Exception{
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("MACHINE_NAME", machineName);
+		map.put("FLAG", flag);
 		
-		System.out.println("arduino");
+		loginService.updateStatus(map);
 	}
 	
 	
 	@RequestMapping(value = "/deleteMember.do")
 	public String deleteMember(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
-		
-		System.out.println(member.getId()+"TEST");
 		
 		return "member/manageMember";
 	}
@@ -156,5 +173,18 @@ public class HomeController {
 	}
 	
 	
-	
+	@RequestMapping(value = "/deleteMachine.do")
+	public String deleteMachine(HttpServletRequest request, @RequestParam("machineName") String machineName, ModelMap model) throws Exception{
+
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("MACHINE_NAME", machineName);
+		
+		loginService.deleteMachine(map);
+		
+		List<HashMap<String,String>> list = loginService.searchMachineList();
+		
+		model.addAttribute("machineList", list);
+		
+		return "addmachine";
+	}
 }

@@ -11,8 +11,8 @@
 <div class="container">
    <div class="row">
       <div class="span5">
-      	<form class="form-status">
-      		<button class="btn btn-sm btn-primary btn-block" type="submit" id="btn-search"><span>Á¶È¸</span></button>
+         <form class="form-status">
+            <button class="btn btn-sm btn-primary btn-block" type="submit" id="btn-search"><span>Á¶È¸</span></button>
             <table class="table table-striped table-condensed">
                   <thead>
                        <h1><strong><div align="center">405µ¿ ÈÞÁöÇöÈ²</div><strong></strong></h1>
@@ -22,49 +22,50 @@
               </thead>
               
              <c:forEach var="groupList" items="${groupList}">
-	              <tr>
-	              	<th>${groupList.DONG}µ¿</th>
-	              	<th>${groupList.FLOOR}Ãþ</th>
-	              </tr>
-	              
-              	  <c:forEach var="nowStatusList" items="${nowStatusList}">
-              	  	<c:if test="${groupList.DONG eq nowStatusList.DONG && groupList.FLOOR eq nowStatusList.FLOOR}">
-              	  	<tbody>
-              	  		<tr>
-              	  			<td>${nowStatusList.PLACE}</td>
-              	  			<td>${nowStatusList.GENDER}</td>
-              	  			<td>ÀÔ±¸</td>
-              	  			<td>
-								<c:if test="${nowStatusList.PART1 eq 'N'}">
-								   <span class="label label-danger">Ä­1</span>
-								</c:if>
-								<c:if test="${nowStatusList.PART1 eq 'Y'}">
-								   <span class="label label-success">Ä­1</span>
-								</c:if>
-							</td>
-              	  			<td>
-								<c:if test="${nowStatusList.PART2 eq 'N'}">
-								   <span class="label label-danger">Ä­1</span>
-								</c:if>
-								<c:if test="${nowStatusList.PART2 eq 'Y'}">
-								   <span class="label label-success">Ä­1</span>
-								</c:if>
-							</td>
-              	  			<td>
-								<c:if test="${nowStatusList.PART3 eq 'N'}">
-								   <span class="label label-danger">Ä­1</span>
-								</c:if>
-								<c:if test="${nowStatusList.PART3 eq 'Y'}">
-								   <span class="label label-success">Ä­1</span>
-								</c:if>
-							</td>
-              	  			
-              	  		</tr>
-              	  		
-              	  	</tbody>
-              	  	</c:if>	
-              	  </c:forEach>
-              	  
+                   <thead style="border:0px;">
+                 <tr>
+                    <th style="border-top-width: 0px;border-bottom-width: 0px;">${groupList.DONG}µ¿</th>
+                    <th style="border-top-width: 0px;border-bottom-width: 0px;">${groupList.FLOOR}Ãþ</th>
+                 </tr>
+                 </thead>
+                   <c:forEach var="nowStatusList" items="${nowStatusList}">
+                      <c:if test="${groupList.DONG eq nowStatusList.DONG && groupList.FLOOR eq nowStatusList.FLOOR}">
+                      <tbody>
+                         <tr style="margin-top:10px;">
+                            <td>${nowStatusList.PLACE}</td>
+                            <td>${nowStatusList.GENDER}</td>
+                            <td>ÀÔ±¸</td>
+                            <td style="padding-top: 8px;">
+                        <c:if test="${nowStatusList.PART1 eq 'N'}">
+                           <span class="label label-danger">Ä­1</span>
+                        </c:if>
+                        <c:if test="${nowStatusList.PART1 eq 'Y'}">
+                           <span class="label label-success">Ä­1</span>
+                        </c:if>
+                     </td>
+                            <td style="padding-top: 8px;">
+                        <c:if test="${nowStatusList.PART2 eq 'N'}">
+                           <span class="label label-danger">Ä­2</span>
+                        </c:if>
+                        <c:if test="${nowStatusList.PART2 eq 'Y'}">
+                           <span class="label label-success">Ä­2</span>
+                        </c:if>
+                     </td>
+                            <td style="padding-top: 8px;">
+                        <c:if test="${nowStatusList.PART3 eq 'N'}">
+                           <span class="label label-danger">Ä­3</span>
+                        </c:if>
+                        <c:if test="${nowStatusList.PART3 eq 'Y'}">
+                           <span class="label label-success">Ä­3</span>
+                        </c:if>
+                     </td>
+                            
+                         </tr>
+                         
+                      </tbody>
+                      </c:if>   
+                   </c:forEach>
+                   <tr style="background-color:#fff; border:0px;"> <td></td></tr>
               </c:forEach>
               
              <!--  <tr>
@@ -234,11 +235,11 @@
 </div>
 <script>
 $(document).ready(function() {
-	//$('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
+   //$('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
 });
 
 $('#btn-search').click(function(){
-	$('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
+   $('.form-status').attr("action","${pageContext.request.contextPath }/home/searchNowStatus.do").submit();
 });
 </script>
 </body>

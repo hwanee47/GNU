@@ -11,6 +11,17 @@
               <param name="ConversionPattern" value="%d %p [%c{5}] %m [%X{userId}]%n" />
          </layout>   
     </appender>
+    
+    <appender name="sql" class="org.apache.log4j.ConsoleAppender">
+         <layout class="org.apache.log4j.PatternLayout">
+              <param name="ConversionPattern" value="%d %p [%c{5}] %m [%X{userId}]%n" />
+         </layout> 
+         <filter class="org.apache.log4j.varia.StringMatchFilter">
+         	<param name="StringToMatch" value="Result"/>
+         	<param name="AcceptOnMatch" value="false"/>
+         
+         </filter>  
+    </appender>
      
     <!-- 날짜별 로그 파일 생성 -->
     <appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender">
@@ -48,6 +59,16 @@
             <param name="ConversionPattern" value="%d %5p [%C{1}] %m [%X{userId}]%n" />
         </layout>   
     </appender>
+    
+    
+    <category name="com.ibatis">
+    	<priority value="debug"></priority>
+    </category> 
+    
+    <category name="java.sql">
+    	<priority value="debug"></priority>
+    	<appender-ref ref="sql"/>
+    </category>
      
     <!-- 특정 패키지 출력 설정 -->
     <logger name="org.apache.ibatis">
@@ -60,7 +81,8 @@
     <logger name="java.sql">
         <level value="DEBUG"/>
     </logger>
- 
+ 	
+
     <!-- 기본 출력 설정 -->
     <root>
         <level value="DEBUG" />

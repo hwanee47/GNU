@@ -49,7 +49,23 @@ public interface LoginService {
 	 * @return   
 	 * @exception Exception
 	 */
-	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception;
+	public void addmachine(HashMap<String, String> map) throws Exception;
+	
+	/**
+	 * 기기삭제
+	 * @param map - 화면에서 입력한 기기정보
+	 * @return   
+	 * @exception Exception
+	 */
+	public void deleteMachine(HashMap<String, String> map) throws Exception;
+	
+	/**
+	 * 기기 휴지상태 업데이트
+	 * @param map - 아두이노에서 요청한 파라미터
+	 * @return   
+	 * @exception Exception
+	 */
+	public void updateStatus(HashMap<String, String> map) throws Exception;
 	
 	
 	/**
@@ -61,5 +77,7 @@ public interface LoginService {
 	public List<HashMap<String,String>> searchNowStatusList() throws Exception;
 	
 	public List<HashMap<String,String>> searchGroupList() throws Exception;
+	
+	public List<HashMap<String,String>> searchMachineList() throws Exception;
 	
 }

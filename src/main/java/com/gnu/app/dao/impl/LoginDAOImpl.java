@@ -49,10 +49,10 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 
 
 	@Override
-	public List<HashMap<String,String>> addmachine(HashMap<String, String> map) throws Exception {
+	public void addmachine(HashMap<String, String> map) throws Exception {
 		insert("Member.insertMachine", map);
 		
-		return (List<HashMap<String,String>>)list("Member.selectMachine");
+		//return (List<HashMap<String,String>>)list("Member.selectMachine");
 	}
 
 
@@ -66,6 +66,26 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 	public List<HashMap<String, String>> selectGroupList() throws Exception {
 		return (List<HashMap<String,String>>)list("Member.selectGroupList");
 	}
+
+
+	@Override
+	public List<HashMap<String, String>> selectMachineList() throws Exception {
+		return (List<HashMap<String,String>>)list("Member.selectMachineList");
+	}
+
+
+	@Override
+	public void deleteMachine(HashMap<String, String> map) throws Exception {
+		delete("Member.deleteMachine", map);
+	}
+
+
+	@Override
+	public void updateStatus(HashMap<String, String> map) throws Exception {
+		update("Member.updateStatus", map);
+		
+	}
+
 	
 	
 	
