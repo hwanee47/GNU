@@ -69,6 +69,15 @@ public interface LoginService {
 	
 	
 	/**
+	 * 사용자삭제
+	 * @param map - 화면에서 선택한 사용자정보
+	 * @return   
+	 * @exception Exception
+	 */
+	public void deleteMember(HashMap<String, String> map) throws Exception;
+	
+	
+	/**
 	 * 휴지현황 리스트 조회처리
 	 * @param 
 	 * @return  List - 휴지현황리스트   

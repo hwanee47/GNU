@@ -71,6 +71,11 @@ public class LoginServiceImpl  implements LoginService{
 	public void updateStatus(HashMap<String, String> map) throws Exception {
 		loginDAO.updateStatus(map);
 	}
+
+	@Override
+	public void deleteMember(HashMap<String, String> map) throws Exception {
+		loginDAO.deleteMember(map);
+	}
 	
 	
 	

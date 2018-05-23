@@ -126,4 +126,12 @@
     		MACHINE_NAME='$MACHINE_NAME$'
     
     </update>
+    
+    <delete id="deleteMember" parameterClass="Map">
+    	/*Member.deleteMember*/
+    	DELETE FROM MEMBER
+    	WHERE
+    		ID = '$ID$'
+    
+    </delete>
 </sqlMap>

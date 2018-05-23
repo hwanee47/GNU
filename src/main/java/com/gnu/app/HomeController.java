@@ -153,7 +153,12 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/deleteMember.do")
-	public String deleteMember(HttpServletRequest request, @ModelAttribute("info") Member member) throws Exception{
+	public String deleteMember(HttpServletRequest request, @RequestParam("id") String id) throws Exception{
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("ID", id);
+		
+		loginService.deleteMember(map);
 		
 		return "member/manageMember";
 	}

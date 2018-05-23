@@ -86,6 +86,12 @@ public class LoginDAOImpl extends EgovAbstractDAO implements LoginDAO {
 		
 	}
 
+
+	@Override
+	public void deleteMember(HashMap<String, String> map) throws Exception {
+		delete("Member.deleteMember", map);
+	}
+
 	
 	
 	
